@@ -21,8 +21,10 @@ const [isSubmitting, setIsSubmitting] = useState(false);
     const onSubmit = async (data) => {
     setIsSubmitting(true); // ⏳ começa o loading
 
+        data.aceita_promocoes = true;
+
         try {
-            const response = await fetch("http://127.0.0.1:8000/register", {
+            const response = await fetch("http://ec2-18-228-223-42.sa-east-1.compute.amazonaws.com:3334/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -174,7 +176,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                {errors.aceita_termos && <p className="text-red-500 text-sm">{errors.aceita_termos.message}</p>}
 
 
-                {/* ✅ Checkbox 2: Participação em comunicações */}
+                {/* ✅ Checkbox 2: Participação em comunicações 
                 <div className="flex items-center gap-2">
                     <input
                         type="checkbox"
@@ -185,6 +187,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                     </label>
                 </div>
                {errors.aceita_promocoes && <p className="text-red-500 text-sm">{errors.aceita_promocoes.message}</p>}
+               */}
 
 
                 <button
