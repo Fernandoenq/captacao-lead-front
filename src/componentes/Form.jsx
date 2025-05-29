@@ -38,7 +38,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                 toast.success("Cadastro realizado com sucesso!");
                 reset();
 
-                const mensagem = `Olá, meu nome é ${data.nome} . Acabei de me cadastrar!`;
+                const mensagem = `Olá, meu nome é ${data.nome}. Acabei de me cadastrar!`;
                 const numero = "5516992848085";
                 const linkWhatsapp = `https://wa.me/${numero}?text=${encodeURIComponent(
                     mensagem
