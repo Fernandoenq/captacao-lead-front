@@ -39,7 +39,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                 reset();
 
                 const mensagem = `Olá, meu nome é ${data.nome}. Acabei de me cadastrar!`;
-                const numero = "5516992848085";
+                const numero = "5511945014059";
                 const linkWhatsapp = `https://wa.me/${numero}?text=${encodeURIComponent(
                     mensagem
                 )}`;
