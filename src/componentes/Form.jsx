@@ -152,9 +152,15 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                 </div>
 
                 <div>
-                    <label>Celular</label>
-                    <input
-                        {...register("celular", { required: "Campo obrigatório" })}
+                <label>Celular</label>
+                <input
+                        {...register("celular", {
+                            required: "Campo obrigatório",
+                            validate: (value) => {
+                                const cleaned = value.replace(/\D/g, ""); // remove não números
+                                return cleaned.length === 11 || "Celular deve conter 11 dígitos numéricos";
+                            }
+                        })}
                         className="border p-2 w-full rounded-md text-black"
                         placeholder="(11) 9 8765-4321"
                         onChange={(e) => setValue("celular", formatCelular(e.target.value))}
@@ -163,6 +169,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                     />
                     {errors.celular && <p className="text-red-500 text-sm">{errors.celular.message}</p>}
                 </div>
+
                   {/* ✅ Checkbox 1: Termos de uso */}
                 <div className="flex items-center gap-2">
                     <input
